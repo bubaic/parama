@@ -10,3 +10,5 @@ dist
 .fleet
 .idea
 public/videos
+*.toml
+_headers
