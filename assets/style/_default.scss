@@ -1,0 +1,22 @@
+html {
+  scrollbar-color: #864555 transparent;
+  scrollbar-width: thin;
+  height: 100vh;
+}
+
+// webkit based browsers
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  // border-radius: 4px;
+  background-color: #864555;
+}
+
+body {
+  background-color: #e3d7c4;
+  overflow-x: hidden;
+}

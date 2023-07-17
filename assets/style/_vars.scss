@@ -1,0 +1,7 @@
+$large_font__minSize: 2rem;
+$large_font__maxSize: 3.5rem;
+
+:root {
+  --fz-large: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
+  --fz-small: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
+}

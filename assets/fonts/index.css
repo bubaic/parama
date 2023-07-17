@@ -1,0 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: "RozhaOne";
+  src: url("./RozhaOne.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Nunito";
+  src: url("./Nunito.woff") format("woff");
+}
