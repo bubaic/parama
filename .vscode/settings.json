@@ -11,26 +11,9 @@
     "strings": true
   },
 
-  "git-log--graph.actions.branch": [
-    {
-      "title": "Switch",
-      "icon": "arrow-swap",
-      "description": "git switch - Switch branches",
-      "info": "Switch to a specified branch. The working tree and the index are updated to match the branch. All new commits will be added to the tip of this branch.\n\nOptionally a new branch could be created with either -c, -C, automatically from a remote branch of bla bla etc",
-      "args": "switch '$1'",
-      "params": ["{LOCAL_BRANCH_NAME}"],
-      "options": [
-        {
-          "value": "--detach",
-          "default_active": false,
-          "info": "For inspection and discardable experiments"
-        },
-        { "value": "--force", "default_active": false }
-      ],
-      "immediate": false,
-      "ignore_errors": false
-    }
-  ],
+  "ungit.showButton": true,
+  "ungit.showInActiveColumn": true,
+  "git.untrackedChanges": "separate",
 
   "files.autoSave": "afterDelay",
   "files.watcherExclude": {
