@@ -36,7 +36,7 @@ const links = [
 
 <style scoped lang="scss">
 footer {
-  @apply mx-auto w-full <sm:mb-32;
+  @apply mx-auto w-full <sm:pb-30;
 }
 
 nav {

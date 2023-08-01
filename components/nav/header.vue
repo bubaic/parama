@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LinkTytpe } from "~/types";
-import { IconFb, IconIg, IconTw, IconArrowUp } from "@/components/icon";
+import { IconArrowUp } from "@/components/icon";
 import MenuMobile from "./MenuMobile.vue";
 import MenuDesktop from "./MenuDesktop.vue";
 import MenuSocial from "./MenuSocial.vue";

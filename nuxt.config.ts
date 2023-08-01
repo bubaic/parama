@@ -17,4 +17,6 @@ export default defineNuxtConfig({
   //     },
   //   },
   // },
+
+  vite: { build: { cssCodeSplit: true, outDir: "dist" } },
 });
