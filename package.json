@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "nuxt build",
+    "build:prod": "nuxt generate",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
