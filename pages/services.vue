@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { IconGo } from "@/components/icon";
+import { useStore } from "@/composables/store";
 
 const lists = [
   "Nail arts & polish",
@@ -15,8 +16,8 @@ const lists = [
   "Bridal makeover",
 ];
 
-const pageTitle = `Services we offer ${defaultSiteTitle}`;
-useSeoMeta({ title: pageTitle });
+const { defaultSiteTitle } = useStore();
+useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
 </script>
 
 <template>

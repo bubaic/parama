@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { openingStats } from "~/composables/store";
+import { useStore } from "@/composables/store";
 
-const links = [
-  { path: "/privacy", value: "privacy" },
-  { path: "/terms", value: "terms" },
-];
+const { openingStats } = useStore(),
+  links = [
+    { path: "/privacy", value: "privacy" },
+    { path: "/terms", value: "terms" },
+  ];
 </script>
 
 <template>
@@ -36,11 +37,11 @@ const links = [
 
 <style scoped lang="scss">
 footer {
-  @apply mx-auto w-full <sm:pb-30;
+  @apply mx-auto w-full pb-30 sm:pb-8;
 }
 
 nav {
-  @apply mx-auto w-full vstack justify-between sm:my-12 sm:hstack
+  @apply mx-auto w-full vstack justify-between my-auto sm:hstack
     px-4 lg:max-w-screen-lg xl:max-w-[1510px];
 }
 
@@ -61,7 +62,7 @@ nav {
   @apply h-20 w-20 hidden xl:hstack;
 }
 .links {
-  @apply flex-shrink hstack justify-end;
+  @apply flex-shrink hstack justify-end divide-x divide-brand-muted/25;
 }
 .nav-link {
   @apply px-2;
@@ -69,16 +70,12 @@ nav {
   &--item {
     @apply font-sans font-bold text-brand-muted/75 relative;
 
-    &:hover .active-line {
-      @apply w-1/2;
+    &:hover {
+      @apply underline underline-offset-4;
     }
   }
 }
 a.router-link-exact-active {
   @apply text-brand-accent;
-
-  & .active-line {
-    @apply w-1/2;
-  }
 }
 </style>

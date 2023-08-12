@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { defaultSiteTitle } from "@/composables/store";
+import { useStore } from "@/composables/store";
 import HeroImage from "@/components/home/HeroImage.vue";
 
-const pageTitle = `Home ${defaultSiteTitle}`;
+const { defaultSiteTitle } = useStore();
 
-useSeoMeta({ title: pageTitle });
+useSeoMeta({ title: `Home ${defaultSiteTitle}` });
 </script>
 
 <template>
