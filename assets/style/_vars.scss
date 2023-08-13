@@ -1,6 +1,9 @@
 // colors (hsl)
 $color-bone: hsl(35 35% 83%);
 $color-lavender: hsl(216 100% 95%);
+$color-alabaster: hsl(350 33% 93%);
+$color-platinum-100: hsl(0 21% 90%);
+$color-platinum-200: hsl(14, 25%, 90%);
 
 :root {
   --fz-large: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
@@ -8,16 +11,28 @@ $color-lavender: hsl(216 100% 95%);
   --fz-small: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
 
   /* colors */
-  --clr-gradient-lavendar-bone-up: linear-gradient(
+  // gradients
+  --clr-grad-lavendar-bone-t: linear-gradient(
     0deg,
-    $color-bone,
-    $color-lavender 90%,
-    $color-lavender 100%
+    #{$color-bone},
+    #{$color-lavender} 90%,
+    #{$color-lavender} 100%
   );
-  --clr-gradient-lavendar-bone-right: linear-gradient(
+  --clr-grad-lavendar-bone-r: linear-gradient(
     90deg,
-    $color-bone,
-    $color-lavender 90%,
-    $color-lavender 100%
+    #{$color-bone},
+    #{$color-lavender} 95%,
+    #{$color-lavender} 100%
+  );
+  --clr-grad-platinum: linear-gradient(
+    90deg,
+    #{$color-platinum-100} 60%,
+    #{$color-platinum-200} 100%
+  );
+  --clr-grad-lavendar-alabaster: linear-gradient(
+    90deg,
+    #{$color-alabaster} 0%,
+    #{$color-lavender} 95%,
+    #{$color-lavender} 100%
   );
 }
