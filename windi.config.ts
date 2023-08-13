@@ -32,8 +32,10 @@ export default defineConfig({
       },
 
       backgroundImage: {
-        "lavender-bone-to-top": "var(--clr-gradient-lavendar-bone-up)",
-        "lavender-bone-to-right": "var(--clr-gradient-lavendar-bone-right)",
+        "lavender-bone-top": "var(--clr-grad-lavendar-bone-t)",
+        "lavender-bone-right": "var(--clr-grad-lavendar-bone-r)",
+        "lavendar-alabaster": "var(--clr-grad-lavendar-alabaster)",
+        platinum: "var(--clr-grad-platinum)",
       },
     },
   },
