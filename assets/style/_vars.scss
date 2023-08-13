@@ -1,7 +1,23 @@
-$large_font__minSize: 2rem;
-$large_font__maxSize: 3.5rem;
+// colors (hsl)
+$color-bone: hsl(35 35% 83%);
+$color-lavender: hsl(216 100% 95%);
 
 :root {
   --fz-large: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
+  --fz-medium: clamp(1.125rem, 0.95rem + 0.875vw, 2rem);
   --fz-small: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
+
+  /* colors */
+  --clr-gradient-lavendar-bone-up: linear-gradient(
+    0deg,
+    $color-bone,
+    $color-lavender 90%,
+    $color-lavender 100%
+  );
+  --clr-gradient-lavendar-bone-right: linear-gradient(
+    90deg,
+    $color-bone,
+    $color-lavender 90%,
+    $color-lavender 100%
+  );
 }

@@ -11,6 +11,7 @@ export default defineConfig({
     extend: {
       fontSize: {
         large: "var(--fz-large)",
+        medium: "var(--fz-medium)",
         small: "var(--fz-small)",
       },
 
@@ -28,6 +29,11 @@ export default defineConfig({
           accent: "#BF4E70",
           muted: "#6F5055",
         },
+      },
+
+      backgroundImage: {
+        "lavender-bone-to-top": "var(--clr-gradient-lavendar-bone-up)",
+        "lavender-bone-to-right": "var(--clr-gradient-lavendar-bone-right)",
       },
     },
   },
