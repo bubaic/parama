@@ -4,6 +4,8 @@ $color-lavender: hsl(216 100% 95%);
 $color-alabaster: hsl(350 33% 93%);
 $color-platinum-100: hsl(0 21% 90%);
 $color-platinum-200: hsl(14, 25%, 90%);
+/* most used */
+$color-shadow: 314, 55%, 18%;
 
 :root {
   --fz-large: clamp(2rem, 1.7rem + 1.5vw, 3.5rem);
@@ -11,9 +13,11 @@ $color-platinum-200: hsl(14, 25%, 90%);
   --fz-small: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
 
   /* colors */
+  --clr-shadow: #{$color-shadow};
+
   // gradients
   --clr-grad-lavendar-bone-t: linear-gradient(
-    0deg,
+    180deg,
     #{$color-bone},
     #{$color-lavender} 90%,
     #{$color-lavender} 100%

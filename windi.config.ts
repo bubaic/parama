@@ -1,5 +1,6 @@
 import { defineConfig } from "windicss/helpers";
 import defaultTheme from "windicss/defaultTheme";
+import AspectRatio from "windicss/plugin/aspect-ratio";
 
 export default defineConfig({
   shortcuts: {
@@ -37,6 +38,21 @@ export default defineConfig({
         "lavendar-alabaster": "var(--clr-grad-lavendar-alabaster)",
         platinum: "var(--clr-grad-platinum)",
       },
+
+      dropShadow: {
+        small: [
+          "0px 0px 0px hsla(var(--clr-shadow), 0.1)",
+          "0px 4px 8px hsla(var(--clr-shadow), 0.1)",
+        ],
+        large: [
+          "0px 0px 0px hsla(var(--clr-shadow), 0.1)",
+          "0px 4px 8px hsla(var(--clr-shadow), 0.1)",
+          "0px 14px 14px hsla(var(--clr-shadow), 0.05)",
+          "0px 32px 19px hsla(var(--clr-shadow), 0.0025)",
+        ],
+      },
     },
   },
+
+  plugins: [AspectRatio],
 });
