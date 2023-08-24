@@ -47,7 +47,7 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
     </section>
 
     <section class="page__image">
-      <img src="images/bg-about.webp" alt="about image" />
+      <img src="/images/bg-about.webp" alt="about image" />
     </section>
   </div>
 </template>

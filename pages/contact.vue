@@ -8,7 +8,7 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
     <section class="page__content">
       <div class="img-wrapper">
         <div class="overlay"></div>
-        <img src="images/bg-contact.webp" alt="parama contact image" />
+        <img src="/images/bg-contact.webp" alt="parama contact image" />
       </div>
 
       <div class="text-contents">
@@ -81,7 +81,7 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
   @apply overflow-hidden relative sm:rounded-xl;
 
   &::after {
-    content:'';
+    content: "";
     @apply absolute inset-0 top-2/3 bg-gradient-to-t from-brand-background to-transparent
       sm:hidden;
   }
