@@ -47,7 +47,7 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
     </section>
 
     <section class="page__image">
-      <img src="images/bg-about.png" alt="about image" />
+      <img src="images/bg-about.webp" alt="about image" />
     </section>
   </div>
 </template>
@@ -55,9 +55,9 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
 <style lang="scss" scoped>
 @import "../assets/style/_mixins";
 .page {
-  @apply container flex flex-col-reverse mx-auto my-5 w-full px-4
-   gap-4 relative md:gap-8 lg:flex-row lg:items-center xl:gap-12 lg:mt-20 lg:mb-22
-   xl:mt-0 xl:mb-10;
+  @apply container flex flex-col-reverse mx-auto mt-5 mb-8 w-full px-4
+   gap-4 relative md:gap-8 lg:flex-row lg:items-center xl:gap-12 lg:mt-20
+   lg:mb-22 xl:mt-0 xl:mb-10 xl:max-w-[1510px];
 
   &__content {
     @include bs-down;

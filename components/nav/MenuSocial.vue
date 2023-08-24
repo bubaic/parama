@@ -1,9 +1,9 @@
 <template>
   <div class="social-icons">
-    <a href="#"><IconFb /></a>
+    <a href="https://www.facebook.com/ParamaExclusiveSalon"><IconFb /></a>
     <a href="#"><IconIg /></a>
-    <a href="#"><IconTw /></a>
-    <a href="#"><IconYt /></a>
+    <!-- <a href="#"><IconTw /></a> -->
+    <a href="https://www.youtube.com/@ParamaLadiesBeautyParlour"><IconYt /></a>
   </div>
 </template>
 
