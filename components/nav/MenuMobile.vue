@@ -6,53 +6,63 @@ const { links, isHidden } = defineProps({
   isHidden: { default: true, type: Boolean },
 });
 
+const emits = defineEmits(["toggleNavItem"]);
 </script>
 
 <template>
-  <TransitionGroup tag="ul" class="mobile-only-menu" name="list">
-    <li
-      class="nav-link"
-      v-for="(link, idx) in links"
-      :data-index="idx"
-      :key="idx"
-    >
-      <NuxtLink :to="link.path" class="nav-link__item">
-        {{ link.value }}
-      </NuxtLink>
-    </li>
-  </TransitionGroup>
+  <div class="mobile-only-menu" v-if="!isHidden">
+    <transition-group tag="ul" name="list">
+      <li
+        class="nav-link"
+        v-for="(link, idx) in links"
+        :data-index="idx"
+        :key="idx"
+      >
+        <NuxtLink
+          :to="link.path"
+          class="nav-link__item"
+          @click="emits('toggleNavItem', (isHidden = !isHidden))"
+        >
+          {{ link.value }}
+        </NuxtLink>
+      </li>
+    </transition-group>
+  </div>
 </template>
 
 <style scoped lang="scss">
 .mobile-only-menu {
-  @apply rounded-lg flex-col-reverse right-0 bottom-25 gap-8 vstack
-    items-end absolute;
+  z-index: -1;
+  @apply bg-gradient-to-t flex h-screen from-brand-muted/60 w-screen -right-4.25
+    -bottom-6.5 absolute items-end sm:hidden;
 }
-
+ul {
+  @apply flex-col-reverse mx-4 mb-28 w-full py-4 gap-8
+    vstack items-end relative;
+}
 .nav-link {
   @apply shadow-xl;
 
   &__item {
-    @apply bg-white rounded shadow-md py-2.5
-      px-3;
+    @apply bg-lavender-bone-right rounded shadow-md py-2.5 px-3;
   }
 }
 
 .nav-link > a.router-link-exact-active,
 a.router-link-exact-active:not(.logo) {
-  @apply bg-brand-accent border border-brand-accent/30
-  text-brand-background font-semibold;
+  @apply bg-brand-accent bg-none border font-bold
+  border-brand-accent/30 text-brand-background;
 }
 
 /*  */
-
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
   transition-delay: 100ms;
 }
 .list-enter-from,
 .list-leave-to {
-  transform: translateY(30px);
+  opacity: 0;
+  transform: translateX(100%);
 }
 </style>

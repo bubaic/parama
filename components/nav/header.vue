@@ -5,7 +5,7 @@ import MenuMobile from "./MenuMobile.vue";
 import MenuDesktop from "./MenuDesktop.vue";
 import MenuSocial from "./MenuSocial.vue";
 
-const isHidden = ref(true);
+let isHidden = ref(true);
 
 const links: Array<LinkTytpe> = [
   { path: "/", value: "home" },
@@ -14,11 +14,21 @@ const links: Array<LinkTytpe> = [
   { path: "/about", value: "about" },
   { path: "/contact", value: "contact" },
 ];
+
+function toggleNavItem() {
+  return (isHidden.value = !isHidden.value);
+}
 </script>
 
 <template>
   <header>
-    <nav>
+    <nav
+      :style="[
+        isHidden
+          ? '--tw-bg-opacity: 0.2; --tw-backdrop-blur: blur(16px)'
+          : '--tw-bg-opacity: 0.35; --tw-backdrop-blur: blur(6px)',
+      ]"
+    >
       <NuxtLink to="/" class="logo">
         <img src="/logo.svg" alt="brand" class="logo__full" />
         <img src="/logo-small.svg" alt="brand" class="logo__sm" />
@@ -29,10 +39,14 @@ const links: Array<LinkTytpe> = [
       <MenuSocial class="social-menu" />
 
       <template v-if="!isHidden">
-        <MenuMobile :links="links" :is-hidden="isHidden" />
+        <MenuMobile
+          :links="links"
+          :is-hidden="isHidden"
+          @toggle-nav-item="toggleNavItem"
+        />
       </template>
 
-      <button class="mob-only" @click="isHidden = !isHidden">
+      <button class="mob-only" @click="toggleNavItem">
         <IconArrowUp :class="{ rotated: isHidden }" />
       </button>
     </nav>
@@ -48,7 +62,7 @@ header {
 nav {
   @apply rounded-lg border-brand-accent/25 w-full
     shadow-brand-secondary-alt/15 hstack justify-between
-    backdrop-blur-lg backdrop-filter <sm:border <sm:bg-brand-accent/20
+    backdrop-blur-sm backdrop-filter <sm:border <sm:bg-brand-accent/0
     <sm:shadow-xl <md:py-2 <md:px-4 lg:max-w-screen-lg xl:max-w-[1510px];
 }
 
