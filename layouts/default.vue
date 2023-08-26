@@ -7,12 +7,24 @@ import SecondaryNav from "@/components/nav/footer.vue";
 </script>
 
 <template>
-  <!-- navigation -->
-  <PrimaryNav />
+  <div class="body-wrapper">
+    <!-- navigation -->
+    <PrimaryNav />
 
-  <!-- main content -->
-  <main><slot /></main>
+    <!-- main content -->
+    <main><slot /></main>
 
-  <!-- footer -->
-  <SecondaryNav />
+    <!-- footer -->
+    <SecondaryNav />
+  </div>
 </template>
+
+<style scoped lang="scss">
+.body-wrapper {
+  @apply vstack;
+}
+
+main {
+  @apply min-h-[calc(100vh-17rem)];
+}
+</style>
