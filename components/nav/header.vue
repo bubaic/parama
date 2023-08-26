@@ -55,8 +55,8 @@ function toggleNavItem() {
 
 <style scoped lang="scss">
 header {
-  @apply w-full py-6 px-4 bottom-0 z-1000
-    vstack fixed sm:my-8 sm:relative;
+  @apply w-full p-6 bottom-0 z-1000 vstack fixed
+    sm:mb-8 sm:relative;
 }
 
 nav {

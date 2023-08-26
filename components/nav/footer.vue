@@ -37,12 +37,14 @@ const { openingStats } = useStore(),
 
 <style scoped lang="scss">
 footer {
-  @apply mx-auto w-full pb-30 sm:pb-8;
+  // @apply w-full pb-30 sm:pb-8 w-full py-6 px-4;
+
+  @apply w-full p-6 vstack <sm:pb-30 sm:my-8;
 }
 
 nav {
-  @apply mx-auto w-full vstack justify-between my-auto sm:hstack
-    px-4 lg:max-w-screen-lg xl:max-w-[1510px];
+  @apply w-full vstack justify-between sm:hstack
+    lg:max-w-screen-lg xl:max-w-[1510px];
 }
 
 .store-opening {
@@ -68,7 +70,8 @@ nav {
   @apply px-2;
 
   &--item {
-    @apply font-sans font-bold text-brand-muted/75 relative;
+    @apply font-sans font-semibold text-brand-muted/70 relative
+      text-sm sm:text-base;
 
     &:hover {
       @apply underline underline-offset-4;
@@ -76,6 +79,6 @@ nav {
   }
 }
 a.router-link-exact-active {
-  @apply text-brand-accent;
+  @apply text-brand-accent/80;
 }
 </style>

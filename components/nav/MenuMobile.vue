@@ -33,11 +33,11 @@ const emits = defineEmits(["toggleNavItem"]);
 <style scoped lang="scss">
 .mobile-only-menu {
   z-index: -1;
-  @apply bg-gradient-to-t flex h-screen from-brand-muted/60 w-screen -right-4.25
-    -bottom-6.5 absolute items-end sm:hidden;
+  @apply bg-gradient-to-t flex h-screen from-brand-muted/60 w-screen
+    -right-6 -bottom-6.5 absolute items-end sm:hidden;
 }
 ul {
-  @apply flex-col-reverse mx-4 mb-28 w-full py-4 gap-8
+  @apply flex-col-reverse mx-4 mb-28 w-full py-4 gap-8 right-2
     vstack items-end relative;
 }
 .nav-link {
