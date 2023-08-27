@@ -55,30 +55,30 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
 <style lang="scss" scoped>
 @import "../assets/style/_mixins";
 .page {
-  @apply container flex flex-col-reverse mx-auto mt-5 mb-8 w-full px-4
-   gap-4 relative md:gap-8 lg:flex-row lg:items-center xl:gap-12 lg:mt-20
-   lg:mb-22 xl:mt-0 xl:mb-10 xl:max-w-[1510px];
+  @apply flex flex-col-reverse mx-auto mt-5 mb-8 w-full max-w-[1510px]
+    px-4 gap-4 relative md:gap-8 lg:flex-row lg:mt-20 lg:mb-22
+    lg:w-screen-lg lg:items-center xl:mt-0 xl:mb-12 xl:w-screen xl:gap-12;
 
   &__content {
     @include bs-down;
     @include bs-right;
     @apply bg-lavender-bone-top rounded-xl mx-auto py-3 px-4 gap-2
       vstack sm:py-4 sm:px-6 lg:bg-lavender-bone-right lg:max-w-screen-sm
-      lg:-ml-10 lg:py-6 lg:px-8 lg:absolute xl:max-w-[60rem] xl:-ml-4;
+      lg:-ml-10 lg:py-6 lg:px-8 lg:absolute xl:-ml-4 xl:max-w-[60rem];
 
     article {
       @apply w-full;
 
       li {
-        @apply bg-lavendar-alabaster border border-brand-background rounded-md 
-          shadow-sm py-0.25 px-1.75;
+        @apply bg-lavendar-alabaster border border-brand-background
+          rounded-md shadow-sm py-0.25 px-1.75;
       }
     }
   }
 
   &__image {
-    @apply rounded-xl h-sm max-w-screen-md object-cover flex-shrink-0
-      vstack overflow-hidden lg:h-lg lg:ml-auto xl:h-2xl;
+    @apply rounded-xl h-sm xl:max-w-screen-md object-cover flex-shrink-0
+      vstack overflow-hidden lg:h-lg lg:ml-auto lg:-mr-2 xl:h-2xl;
 
     img {
       @apply h-full object-cover w-full;
