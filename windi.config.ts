@@ -51,6 +51,11 @@ export default defineConfig({
           "0px 32px 19px hsla(var(--clr-shadow), 0.0025)",
         ],
       },
+
+      screens: {
+        tiny: "375px",
+        exp: "590px",
+      },
     },
   },
 
