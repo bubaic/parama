@@ -7,47 +7,47 @@ const useStore = () => {
   const serviceList = [
     {
       name: "Nail arts & polishing",
-      imgSrc: "images/services/nail-art.svg",
+      imgSrc: "/images/services/nail-art.svg",
     },
     {
       name: "hair-cutting & dressing",
-      imgSrc: "images/services/hair-cutting.svg",
+      imgSrc: "/images/services/hair-cutting.svg",
     },
     {
       name: "bridal makeover",
-      imgSrc: "images/services/bridal-makeover.svg",
+      imgSrc: "/images/services/bridal-makeover.svg",
     },
     {
       name: "spa & massage",
-      imgSrc: "images/services/spa.svg",
+      imgSrc: "/images/services/spa.svg",
     },
     {
       name: "threading & waxing",
-      imgSrc: "images/services/waxing.svg",
+      imgSrc: "/images/services/waxing.svg",
     },
     {
       name: "manicure",
-      imgSrc: "images/services/manicure.svg",
+      imgSrc: "/images/services/manicure.svg",
     },
     {
       name: "skincare & treatments",
-      imgSrc: "images/services/skin-treatments.svg",
+      imgSrc: "/images/services/skin-treatments.svg",
     },
     {
       name: "pedicure",
-      imgSrc: "images/services/pedicure.svg",
+      imgSrc: "/images/services/pedicure.svg",
     },
     {
       name: "make-up essentials",
-      imgSrc: "images/services/makeup.svg",
+      imgSrc: "/images/services/makeup.svg",
     },
     {
       name: "hair treatments & coloring",
-      imgSrc: "images/services/hair-color.svg",
+      imgSrc: "/images/services/hair-color.svg",
     },
     {
       name: "grooming & makeover",
-      imgSrc: "images/services/makeover.svg",
+      imgSrc: "/images/services/makeover.svg",
     },
   ];
 
