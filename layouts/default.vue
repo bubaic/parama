@@ -25,6 +25,6 @@ import SecondaryNav from "@/components/nav/footer.vue";
 }
 
 main {
-  @apply min-h-[calc(100vh-17rem)];
+  @apply min-h-[calc(100vh-17rem)] w-full vstack justify-center;
 }
 </style>
