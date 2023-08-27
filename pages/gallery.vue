@@ -57,12 +57,13 @@ h1 {
 }
 
 .page {
-  @apply container mx-auto xl:max-w-[1510px];
+  min-height: inherit;
+  @apply mx-auto xl:max-w-[1510px] <xl:px-6;
 }
 
 .cards {
-  @apply grid gap-4 sm:gap-6 grid-cols-2 <sm:px-4 my-5 mt-2 sm:mb-12
-    sm:grid-cols-3 lg:grid-cols-5 lg:px-4;
+  @apply <sm:mt-5 grid gap-6 grid-cols-2 sm:gap-6 sm:grid-cols-3
+    lg:px-6 lg:grid-cols-5;
 }
 
 .card {
@@ -74,8 +75,8 @@ h1 {
 
     &::after {
       content: "";
-      @apply absolute -inset-2  filter blur-sm
-       transition-colors duration-150;
+      @apply -inset-2 transition-colors  duration-150 absolute
+       filter blur-sm;
     }
 
     &:hover {
@@ -92,8 +93,8 @@ h1 {
 }
 
 .icon-wrapper {
-  @apply bg-brand-background h-15 grid transform top-1/2 left-1/2 w-15
-    z-10 -translate-x-1/2 -translate-y-1/2 absolute place-items-center
-    rounded-full invisible;
+  @apply bg-brand-background rounded-full h-15 grid transform top-1/2 left-1/2
+    w-15 z-10 -translate-x-1/2 -translate-y-1/2 absolute
+    place-items-center invisible;
 }
 </style>

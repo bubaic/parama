@@ -55,16 +55,17 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
 <style lang="scss" scoped>
 @import "../assets/style/_mixins";
 .page {
-  @apply flex flex-col-reverse mx-auto mt-5 mb-8 w-full max-w-[1510px]
-    px-4 gap-4 relative md:gap-8 lg:flex-row lg:mt-20 lg:mb-22
-    lg:w-screen-lg lg:items-center xl:mt-0 xl:mb-12 xl:w-screen xl:gap-12;
+  @apply flex flex-col-reverse mx-auto min-h-screen-md mb-8 w-full
+     px-4 mt-4 gap-2 lg:justify-center lg:max-w-[90vw]
+    xl:my-0 xl:max-w-[1510px];
 
   &__content {
     @include bs-down;
     @include bs-right;
     @apply bg-lavender-bone-top rounded-xl mx-auto py-3 px-4 gap-2
-      vstack sm:py-4 sm:px-6 lg:bg-lavender-bone-right lg:max-w-screen-sm
-      lg:-ml-10 lg:py-6 lg:px-8 lg:absolute xl:-ml-4 xl:max-w-[60rem];
+      vstack sm:py-4 sm:px-6 lg:bg-lavender-bone-right lg:-ml-2
+      lg:max-w-[40rem] lg:py-6 lg:px-8 lg:absolute xl:-ml-4
+      xl:max-w-[60rem];
 
     article {
       @apply w-full;
@@ -77,8 +78,9 @@ useSeoMeta({ title: `About ${defaultSiteTitle}` });
   }
 
   &__image {
-    @apply rounded-xl h-sm xl:max-w-screen-md object-cover flex-shrink-0
-      vstack overflow-hidden lg:h-lg lg:ml-auto lg:-mr-2 xl:h-2xl;
+    @apply rounded-xl h-sm object-cover flex-shrink-0 vstack
+      overflow-hidden lg:h-lg lg:ml-auto xl:max-w-screen-md 
+      xl:h-2xl;
 
     img {
       @apply h-full object-cover w-full;

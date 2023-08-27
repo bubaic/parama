@@ -37,7 +37,7 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
 @import "../assets/style/mixins";
 
 .page {
-  @apply container mx-auto xl:max-w-[1510px];
+  @apply mx-auto w-full xl:max-w-screen-xl 2xl:max-w-[1510px];
 
   h1 {
     @include visually-hidden;
@@ -45,19 +45,20 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
 }
 
 .cards {
-  @apply mt-2 mb-5 w-full grid gap-6 grid-cols-2 justify-items-center
-    items-start sm:gap-0 sm:grid-cols-3 <sm:px-4 lg:grid-cols-4
-    xl:gap-12 xl:grid-cols-6;
+  @apply <sm:mt-3 mb-5 grid gap-6 grid-cols-2 justify-start
+    items-start sm:grid-cols-3 lg:grid-cols-4 xl:mx-2 xl:grid-cols-6
+    2xl:m-0;
 }
 
 .card {
   transition: all 250ms ease-out;
-  @apply outline-none gap-2 vstack sm:mb-6 sm:gap-4;
+  @apply outline-none gap-2 vstack sm:mb-3 sm:gap-4;
 
   &__img {
-    @apply bg-platinum border border-brand-background rounded-xl h-40
-      p-5 transition-all ease-out w-40 duration-200 filter
-      drop-shadow-large vstack sm:h-50 sm:p-10 sm:w-50;
+    transition: all 200ms ease-out;
+    @apply bg-platinum border border-brand-background rounded-xl 
+      h-40 p-5 w-40 filter drop-shadow-large vstack
+      <tiny:h-32 <tiny:w-32 sm:h-50 sm:p-10 sm:w-50 xl:h-40 xl:w-40;
   }
 
   &:hover,
@@ -76,14 +77,14 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
   }
 
   &--content {
-    @apply cursor-pointer w-full px-1 gap-2 hstack items-start
-      justify-between sm:max-w-50;
+    @apply cursor-pointer w-full max-w-40 gap-2 hstack items-start
+      justify-between <tiny:max-w-32 sm:max-w-50 xl:max-w-40;
   }
 
   &__text {
     @apply text-sm text-brand-secondary-alt text-left leading-tight
-      lowercase sm:text-base sm:leading-[1.15] first-letter:capitalize
-      pl-1;
+      pl-1 lowercase sm:text-base sm:leading-[1.15]
+      first-letter:capitalize;
   }
 }
 

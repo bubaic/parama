@@ -23,9 +23,7 @@ useSeoMeta({ title: `Home ${defaultSiteTitle}` });
         fabulous.
       </p>
 
-      <button class="bg-brand-accent rounded text-brand-background py-2 px-4">
-        Book your seat
-      </button>
+      <a href="#whatsapp-link" class="btn">Book your seat</a>
     </div>
 
     <div class="page__image">
@@ -35,13 +33,16 @@ useSeoMeta({ title: `Home ${defaultSiteTitle}` });
 </template>
 
 <style scoped lang="scss">
+@import "../assets/style/mixins";
+
 .page {
-  @apply container mx-auto w-full grid grid-cols-1 justify-items-end
-   items-center my-5 px-4 lg:grid-cols-2 gap-4 md:gap-8 xl:gap-12;
+  @apply mx-auto my-5 w-full grid px-4 gap-4 grid-cols-1
+    justify-items-end items-center md:gap-8 lg:px-6 lg:grid-cols-2
+    xl:max-w-[1510px] xl:gap-12;
 
   &__content {
-    @apply w-full gap-3 sm:gap-6 vstack lg:items-start
-      <md:text-center;
+    @apply w-full gap-3 vstack sm:gap-6 <md:text-center
+      lg:items-start;
 
     div {
       @apply gap-1 vstack <lg:text-center;
@@ -57,12 +58,18 @@ useSeoMeta({ title: `Home ${defaultSiteTitle}` });
     }
 
     p {
-      @apply text-small font-sans text-brand-muted/95 <sm:px-2
+      @apply font-sans text-small text-brand-muted/95 <sm:px-2
         <lg:text-center;
     }
   }
 }
 .page__image {
-  @apply relative hstack justify-center w-full <lg:py-8;
+  @apply w-full relative hstack justify-center <lg:py-8;
+}
+
+.btn {
+  @include btn;
+  @apply bg-brand-accent text-brand-background text-small font-sans
+    font-bold;
 }
 </style>

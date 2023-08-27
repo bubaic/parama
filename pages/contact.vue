@@ -41,39 +41,47 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
     </section>
 
     <!-- embed google map -->
-    <section class="page__location-map">
-      <div class="overlay"></div>
+    <section class="page__location-wrapper">
+      <div class="page__location--map">
+        <div class="overlay"></div>
 
-      <!-- src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.913949065846!2d88.38907677599273!3d22.61968833124157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89df09ef5fc2f%3A0xc0d7e8512f0dffc5!2s7%2F14A%2C%20Dum%20Dum%20Rd%2C%20Bir%20Para%2C%20Satpukur%2C%20Kolkata%2C%20West%20Bengal%20700030!5e0!3m2!1sen!2sin!4v1692196971355!5m2!1sen!2sin" -->
-      <iframe
-        allowfullscreen="true"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.913949065846!2d88.38907677599273!3d22.61968833124157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89df09ef5fc2f%3A0xc0d7e8512f0dffc5!2s7%2F14A%2C%20Dum%20Dum%20Rd%2C%20Bir%20Para%2C%20Satpukur%2C%20Kolkata%2C%20West%20Bengal%20700030!5e0!3m2!1sen!2sin!4v1692196971355!5m2!1sen!2sin"
+          allowfullscreen="true"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        />
+      </div>
     </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/style/_mixins";
+@import "../assets/style/mixins";
 
 .page {
-  @apply container mx-auto mb-12 vstack justify-between xl:max-w-[1510px]
-  xl:hstack xl:items-stretch;
+  @apply mx-auto mb-12 w-full vstack justify-between
+    sm:px-6 xl:max-w-[1510px] xl:gap-8 xl:hstack 2xl:px-0;
 
   &__content {
-    @apply w-full gap-8 vstack items-start xl:max-w-screen-sm xl:gap-4;
+    @apply w-full gap-8 vstack items-start xl:max-w-[520px] xl:gap-4;
   }
 
-  &__location-map {
-    @include bs-down;
-    @apply w-full shadow-brand-muted/30 overflow-hidden relative
-      <sm:mx-4 xl:h-screen-sm xl:w-screen-md xl:shadow-2xl;
+  &__location {
+    &-wrapper {
+      @apply flex w-full <sm:px-4 xl:justify-end;
+    }
+
+    &--map {
+      @include bs-down;
+      @apply rounded-xl shadow-brand-muted/30 overflow-hidden
+        relative xl:h-screen-sm xl:w-screen-md xl:shadow-2xl <xl:flex-1;
+    }
   }
 }
 
 .overlay {
-  @apply bg-brand-accent inset-0 absolute mix-blend-hue 
+  @apply bg-brand-accent inset-0 absolute mix-blend-hue
     pointer-events-none;
 }
 
@@ -82,13 +90,13 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
 
   &::after {
     content: "";
-    @apply absolute inset-0 top-2/3 bg-gradient-to-t from-brand-background to-transparent
-      sm:hidden;
+    @apply bg-gradient-to-t from-brand-background to-transparent inset-0
+      top-2/3 absolute;
   }
 }
 
 .text-contents {
-  @apply w-full <sm:px-4 <sm:-mt-12 <sm:-mb-4 xl:max-w-[560px] z-10;
+  @apply w-full z-10 <sm:-mb-4 <sm:px-4 xl:max-w-[560px];
 
   & > * {
     @apply gap-2 hstack md:gap-4 first:mb-4 not-first:my-2
@@ -108,12 +116,12 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
 }
 
 .whatsapp-cta {
-  box-shadow: 2px 4px #784b58;
-  @apply bg-brand-accent border rounded-full border-brand-secondary-alt/60 py-0.5 pr-2
-    pl-1.25 gap-1 sm:gap-2 hstack sm:p-1 sm:pr-3 sm:pl-1.5 <sm:mx-4 <xl:mb-10;
+  @include btn;
+  @apply bg-brand-accent px-3 gap-2 hstack sm:p-2 sm:pl-3 sm:pr-4
+    sm:gap-2.5 <sm:mx-4 <xl:mb-10;
 
   &--icon {
-    @apply bg-lavendar-alabaster rounded-full p-1;
+    @apply bg-lavendar-alabaster rounded-lg p-1;
 
     & > * {
       @apply w-5 sm:w-7;
@@ -126,7 +134,7 @@ useSeoMeta({ title: `Contact ${defaultSiteTitle}` });
 }
 
 iframe {
-  @apply border-none rounded-xl min-h-sm w-full xl:h-screen-sm;
+  @apply border-none min-h-sm w-full sm:rounded-xl xl:h-screen-sm;
 }
 
 h1 {
