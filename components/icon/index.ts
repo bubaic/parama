@@ -8,6 +8,7 @@ import arrowupright from "./arrow-up-right.vue";
 import mail from "./mail.vue";
 import phone from "./phone.vue";
 import map from "./map.vue";
+import close from "./close.vue";
 
 export {
   fb as IconFb,
@@ -20,4 +21,5 @@ export {
   mail as IconMail,
   map as IconMap,
   phone as IconPhone,
+  close as IconClose,
 };
