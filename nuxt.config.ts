@@ -6,17 +6,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: { crawlLinks: true },
   },
-  // experimental: { payloadExtraction: true },
 
   // build: { transpile: ["gsap"] },
-
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       scss: "@use '~/assets/style/global.scss'",
-  //     },
-  //   },
-  // },
-
+  app: { pageTransition: { name: "page", mode: "out-in" } },
   vite: { build: { cssCodeSplit: true, outDir: "dist" } },
 });
