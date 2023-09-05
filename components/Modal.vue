@@ -10,7 +10,7 @@ const { isModalOpen, mediaItem } = defineProps({
 function getMediaItemType(source: string) {
   const imageTypes = /(jpg|jpeg|png|webp|avip)/g;
 
-  return imageTypes.test(source.split(".")[1]) ? "image" : "video";
+  return imageTypes.test(source?.split(".")[1]) ? "image" : "video";
 }
 </script>
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
+import { useUtils } from "@/composables/utils";
 import { MediaType } from "types";
 
 const isModalOpen = ref(false);
@@ -16,14 +17,8 @@ const getMediaType = (item: number) => {
 
   return imageTypes.test(itemType) ? "image" : "video";
 };
-const media = {
-  currItem: {} as MediaType,
-  set: (index: number) => {
-    mediaList[index];
-    media.currItem = mediaList[index];
-  },
-  get: () => media.currItem,
-};
+const { useMedia } = useUtils(),
+  { media } = useMedia(mediaList);
 
 const { defaultSiteTitle } = useStore();
 useSeoMeta({ title: `Gallery ${defaultSiteTitle}` });

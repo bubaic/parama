@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
+import { useUtils } from "@/composables/utils";
 
-const { serviceList } = useStore();
+const { serviceList } = useStore(),
+  { useMedia } = useUtils();
+
+const isModalOpen = ref(false),
+  { media } = useMedia(serviceList);
 
 const { defaultSiteTitle } = useStore();
 useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
@@ -13,11 +18,15 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
     <h1>What we can offer you</h1>
 
     <section class="cards">
-      <button @click="" v-for="item in serviceList" class="card">
+      <button
+        @click="isModalOpen = !isModalOpen"
+        v-for="item in serviceList"
+        class="card"
+      >
         <div class="card__img">
           <img
             class="h-full w-full"
-            :src="item.imgSrc"
+            :src="item.src"
             :alt="'image of ' + item.name"
           />
         </div>
@@ -30,6 +39,8 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
         </span>
       </button>
     </section>
+
+    <Modal :is-modal-open="isModalOpen" :mediaItem="media.currItem" />
   </div>
 </template>
 
