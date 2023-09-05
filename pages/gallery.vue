@@ -1,19 +1,28 @@
 <script setup lang="ts">
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
+import { MediaType } from "types";
 
 const isModalOpen = ref(false);
 
-const mediaList = [
-  { title: "", src: "images/img-002.jpg" },
+const mediaList: Array<MediaType> = [
+  { title: "parlour outer view", src: "images/img-002.jpg" },
   { title: "", src: "videos/vid-001.mp4" },
 ];
 
-const getMediaType = (index: number) => {
+const getMediaType = (item: number) => {
   const imageTypes = /(jpg|jpeg|png|webp|avip)/g,
-    itemType = mediaList[index].src.split(".")[1];
+    itemType = mediaList[item].src.split(".")[1];
 
   return imageTypes.test(itemType) ? "image" : "video";
+};
+const media = {
+  currItem: {} as MediaType,
+  set: (index: number) => {
+    mediaList[index];
+    media.currItem = mediaList[index];
+  },
+  get: () => media.currItem,
 };
 
 const { defaultSiteTitle } = useStore();
@@ -26,7 +35,7 @@ useSeoMeta({ title: `Gallery ${defaultSiteTitle}` });
 
     <section class="cards">
       <button
-        @click="isModalOpen = !isModalOpen"
+        @click="[(isModalOpen = !isModalOpen), media.set(idx)]"
         v-for="(item, idx) in mediaList"
         class="card"
       >
@@ -36,7 +45,7 @@ useSeoMeta({ title: `Gallery ${defaultSiteTitle}` });
             :src="item.src"
             :alt="'image of ' + item.title"
           />
-          <video v-else :src="item.src" />
+          <video v-else preload="metadata"><source :src="item.src" /></video>
 
           <div class="icon-wrapper" role="button">
             <IconGo class="fill-current icon" />
@@ -45,7 +54,7 @@ useSeoMeta({ title: `Gallery ${defaultSiteTitle}` });
       </button>
     </section>
 
-    <Modal :is-modal-open="isModalOpen" />
+    <Modal :is-modal-open="isModalOpen" :mediaItem="media.currItem" />
   </div>
 </template>
 
@@ -62,13 +71,14 @@ h1 {
 }
 
 .cards {
-  @apply <sm:mt-5 grid gap-6 grid-cols-2 sm:gap-6 sm:grid-cols-3
+  @apply grid gap-6 grid-cols-2 sm:gap-6 sm:grid-cols-3 <sm:mt-5
     lg:px-6 lg:grid-cols-5;
 }
 
 .card {
   transition: all 250ms ease-out;
-  @apply outline-none gap-2 vstack sm:gap-4;
+  @apply rounded-xl h-max outline-none gap-2 vstack overflow-hidden
+    sm:gap-4;
 
   &__media {
     @apply rounded-xl overflow-hidden relative;
