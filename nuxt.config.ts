@@ -1,13 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["nuxt-windicss"],
-  css: ["~/assets/fonts/index.css", "~/assets/style/global.scss"],
-
-  nitro: {
-    prerender: { crawlLinks: true },
-  },
-
-  // build: { transpile: ["gsap"] },
   app: { pageTransition: { name: "page", mode: "out-in" } },
+  build: { transpile: ["gsap"] },
+  css: ["~/assets/fonts/index.css", "~/assets/style/global.scss"],
+  modules: ["nuxt-windicss"],
+  nitro: { prerender: { crawlLinks: true } },
   vite: { build: { cssCodeSplit: true, outDir: "dist" } },
 });

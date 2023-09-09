@@ -15,9 +15,7 @@ const links: Array<LinkTytpe> = [
   { path: "/contact", value: "contact" },
 ];
 
-function toggleNavItem() {
-  return (isHidden.value = !isHidden.value);
-}
+const toggleNavItem = () => (isHidden.value = !isHidden.value);
 </script>
 
 <template>
@@ -38,13 +36,13 @@ function toggleNavItem() {
 
       <MenuSocial class="social-menu" />
 
-      <template v-if="!isHidden">
+      <ClientOnly>
         <MenuMobile
           :links="links"
           :is-hidden="isHidden"
           @toggle-nav-item="toggleNavItem"
         />
-      </template>
+      </ClientOnly>
 
       <button class="mob-only" @click="toggleNavItem">
         <IconArrowUp :class="{ rotated: isHidden }" />
