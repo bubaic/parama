@@ -23,7 +23,7 @@ const { links } = defineProps({ links: Array<LinkTytpe> });
 
 .active-line {
   @apply bg-brand-accent rounded-lg h-0.75 transition-all ease-out w-0
-    duration-200 block pointer-events-none left-0.5 relative;
+    duration-200 block pointer-events-none left-0.25 relative;
 }
 
 .nav-link {
@@ -32,13 +32,12 @@ const { links } = defineProps({ links: Array<LinkTytpe> });
   &--item {
     @apply font-sans font-bold text-brand-muted/75 relative md:text-lg;
 
-    &:hover > .active-line,
-    &.router-link-exact-active > .active-line {
-      @apply w-1/2 pointer-events-none;
-    }
-
-    &.router-link-exact-active > .active-line {
-      @apply bg-brand-muted/60;
+    &:hover,
+    &.router-link-exact-active {
+      @apply text-brand-accent;
+      .active-line {
+        @apply w-1/2 pointer-events-none;
+      }
     }
   }
 }
