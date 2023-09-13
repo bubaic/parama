@@ -2,14 +2,13 @@
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
 import { useUtils } from "@/composables/utils";
+import ServiceModal from "@/components/modals/ServiceModal.vue";
 
-const { serviceList } = useStore(),
-  { useMedia } = useUtils();
+const { serviceList, defaultSiteTitle } = useStore(),
+  { useMedia } = useUtils(),
+  { media } = useMedia(serviceList),
+  isModalOpen = ref(false);
 
-const isModalOpen = ref(false),
-  { media } = useMedia(serviceList);
-
-const { defaultSiteTitle } = useStore();
 useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
 </script>
 
@@ -19,20 +18,20 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
 
     <section class="cards">
       <button
-        @click="isModalOpen = !isModalOpen"
-        v-for="item in serviceList"
         class="card"
+        v-for="(item, idx) in serviceList"
+        @click="[(isModalOpen = !isModalOpen), media.set(idx)]"
       >
         <div class="card__img">
           <img
             class="h-full w-full"
             :src="item.src"
-            :alt="'image of ' + item.name"
+            :alt="`image of ${item.title}`"
           />
         </div>
 
         <span class="card--content">
-          <div class="card__text">{{ item.name }}</div>
+          <div class="card__text">{{ item.title }}</div>
           <div class="icon-wrapper">
             <IconGo class="icon" />
           </div>
@@ -40,7 +39,7 @@ useSeoMeta({ title: `Services we offer ${defaultSiteTitle}` });
       </button>
     </section>
 
-    <Modal :is-modal-open="isModalOpen" :mediaItem="media.currItem" />
+    <ServiceModal :is-modal-open="isModalOpen" :media-item="media.currItem" />
   </div>
 </template>
 

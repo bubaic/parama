@@ -1,9 +1,9 @@
-import { MediaType } from "@/types";
+import { MediaItem } from "@/types";
 
 function useUtils() {
-  const useMedia = (list: Array<MediaType>) => {
+  const useMedia = (list: Array<MediaItem>) => {
     const media = {
-      currItem: {} as MediaType,
+      currItem: {} as MediaItem,
       set: (index: number) => (media.currItem = list[index]),
       get: () => media.currItem,
     };

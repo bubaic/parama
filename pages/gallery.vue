@@ -2,20 +2,21 @@
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
 import { useUtils } from "@/composables/utils";
-import { MediaType } from "types";
+import { MediaItem } from "types";
+import GalleryModal from "@/components/modals/GalleryModal.vue";
 
 const isModalOpen = ref(false);
 
-const mediaList: Array<MediaType> = [
+const mediaList: Array<MediaItem> = [
   { title: "parlour outer view", src: "images/img-002.jpg" },
   { title: "", src: "videos/vid-001.mp4" },
 ];
 
 const getMediaType = (item: number) => {
   const imageTypes = /(jpg|jpeg|png|webp|avip)/g,
-    itemType = mediaList[item].src.split(".")[1];
+    itemType = mediaList[item]?.src?.split(".")[1];
 
-  return imageTypes.test(itemType) ? "image" : "video";
+  return imageTypes.test(itemType!) ? "image" : "video";
 };
 const { useMedia } = useUtils(),
   { media } = useMedia(mediaList);
@@ -49,7 +50,7 @@ useSeoMeta({ title: `Gallery ${defaultSiteTitle}` });
       </button>
     </section>
 
-    <Modal :is-modal-open="isModalOpen" :mediaItem="media.currItem" />
+    <GalleryModal :is-modal-open="isModalOpen" :mediaItem="media.currItem" />
   </div>
 </template>
 
@@ -80,7 +81,7 @@ h1 {
 
     &::after {
       content: "";
-      @apply -inset-2 transition-colors  duration-150 absolute
+      @apply -inset-2 transition-colors duration-150 absolute
        filter blur-sm;
     }
 
