@@ -9,6 +9,6 @@ dist
 .DS_Store
 .fleet
 .idea
-public/videos
 *.toml
 _headers
+*.out

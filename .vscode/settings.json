@@ -14,6 +14,8 @@
   "ungit.showButton": true,
   "ungit.showInActiveColumn": true,
   "git.untrackedChanges": "separate",
+  "gitlens.statusBar.enabled": true,
+  "gitlens.mode.statusBar.enabled": true,
 
   "files.autoSave": "afterDelay",
   "files.watcherExclude": {
@@ -30,12 +32,16 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/node_modules": true,
-    ".yarn/": true
+    ".yarn/": true,
+    "*.out": true,
+    "*.log": true,
+    ".pnp.*": true,
+    ".nuxt": true
   },
   "search.followSymlinks": false,
 
   // scss
   "scss.lint.unknownAtRules": "ignore",
   // for vscode theme: synthwave (only)
-  "synthwave84.brightness": 0.5
+  "synthwave84.brightness": 0.6
 }
