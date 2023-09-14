@@ -2,7 +2,7 @@
 import { IconGo } from "@/components/icon";
 import { useStore } from "@/composables/store";
 import { useUtils } from "@/composables/utils";
-import { MediaItem } from "types";
+import { MediaItem } from "@/types";
 import GalleryModal from "@/components/modals/GalleryModal.vue";
 
 const isModalOpen = ref(false);
